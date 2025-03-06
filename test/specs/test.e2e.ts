@@ -1,4 +1,5 @@
 import { expect } from '@wdio/globals'
+import { credentials } from '../config/config';
 
 describe('Naukri Application', () => {
     it('Login', async () => {
@@ -9,8 +10,8 @@ describe('Naukri Application', () => {
         const currentTitle = await browser.getTitle();
         console.log("Opened URL is ", currentURL, " & title is ", currentTitle);
         await browser.$("#login_Layer").click();
-        await browser.$("//div[@class='form-row']/input[@type='text']").addValue("856shaileshkumar@gmail.com");
-        await browser.$("//input[@type='password']").addValue("Spartans300");
+        await browser.$("//div[@class='form-row']/input[@type='text']").addValue(credentials.username);
+        await browser.$("//input[@type='password']").addValue(credentials.password);
         await browser.$("//button[@type='submit']").click();
         console.log("End of script");
     })

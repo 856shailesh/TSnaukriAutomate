@@ -5,3 +5,4 @@ test/reports/*
 package-lock.json
 allure-report/*
 logs/*
+config.ts

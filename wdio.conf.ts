@@ -125,7 +125,20 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
+    //reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
+    
+    reporters: [
+        'spec',
+        [
+        'allure',
+        {
+            outputDir: 'allure-results', // Directory to store Allure results
+            disableWebdriverStepsReporting: true, // Optional: Disable WebDriver commands in report
+            disableWebdriverScreenshotsReporting: false, // Enable screenshot reporting
+        },
+        ],
+    ], 
+        
 
     // Options to be passed to Jasmine.
     jasmineOpts: {
